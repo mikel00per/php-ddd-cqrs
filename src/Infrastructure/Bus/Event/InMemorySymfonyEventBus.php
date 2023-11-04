@@ -19,13 +19,11 @@ class InMemorySymfonyEventBus implements EventBus
 
     public function __construct(iterable $subscribers)
     {
-        $this->bus = new MessageBus(
-            [
-                new HandleMessageMiddleware(
-                    new HandlersLocator(CallableFirstParameterExtractor::forPipedCallables($subscribers))
-                ),
-            ]
-        );
+        $handlers = CallableFirstParameterExtractor::forPipedCallables($subscribers);
+        $handlersLocator = new HandlersLocator($handlers);
+        $middlewareHandler = new HandleMessageMiddleware($handlersLocator);
+
+        $this->bus = new MessageBus([$middlewareHandler]);
     }
 
     public function publish(DomainEvent ...$events): void
@@ -33,7 +31,7 @@ class InMemorySymfonyEventBus implements EventBus
         foreach ($events as $event) {
             try {
                 $this->bus->dispatch($event);
-            } catch (NoHandlerForMessageException|Exception) {
+            } catch (NoHandlerForMessageException) {
             }
         }
     }
