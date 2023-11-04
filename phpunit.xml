@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+        cacheResult="false"
+        colors="true"
+        backupGlobals="false"
+        backupStaticAttributes="false"
+        convertDeprecationsToExceptions="true"
+        convertErrorsToExceptions="true"
+        convertNoticesToExceptions="true"
+        convertWarningsToExceptions="true"
+        processIsolation="false"
+>
+    <testsuites>
+        <testsuite name="Units">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+
+  <coverage processUncoveredFiles="false">
+    <include>
+      <directory suffix=".php">src</directory>
+    </include>
+
+        <exclude>
+            <directory>vendor</directory>
+            <directory suffix="Interface.php">src</directory>
+            <directory suffix="index.php">src</directory>
+        </exclude>
+
+        <report>
+            <html outputDirectory="tmp/coverage-html" lowUpperBound="50" highLowerBound="90"/>
+        </report>
+
+    </coverage>
+
+    <php>
+        <env name="XDEBUG_MODE" value="coverage" force="true"/>
+    </php>
+
+</phpunit>

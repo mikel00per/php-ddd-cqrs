@@ -1,0 +1,7 @@
+version: "3.9"
+
+services:
+  php:
+    image: mikel00per/php-alpine-development
+    volumes:
+      - .:/code
