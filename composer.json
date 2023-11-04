@@ -1,18 +1,18 @@
 {
-    "name": "mikelooper/php-library-template",
+    "name": "mikelooper/php-ddd-cqrs",
     "type": "library",
     "description": "A template to create libraries",
     "keywords": ["library"],
-    "homepage": "https://github.com/mikel00per/php-library-template",
+    "homepage": "https://github.com/mikel00per/php-ddd-cqrs",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "PhpLibraryTemplate\\": "src/"
+            "Ddd\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "PhpLibraryTemplate\\Tests\\": "tests/"
+            "DDD\\Tests\\": "tests/"
         },
         "classmap": [
             "src/"
@@ -25,7 +25,10 @@
         }
     ],
     "require": {
-        "php": "^8.0"
+        "php": "^8.0",
+        "lambdish/phunctional": "^2.1",
+        "mikelooper/php-value-objects": "^0.0.1",
+        "symfony/messenger": "^6.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5",

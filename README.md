@@ -1,6 +1,6 @@
-# PHP library template
+# PHP DDD CQRS
 
-Template to make libraries in PHP
+Library to manage concepts related with ddd and cqrs.
 
 ## Make commands
 
