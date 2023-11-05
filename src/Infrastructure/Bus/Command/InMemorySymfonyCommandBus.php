@@ -1,10 +1,10 @@
 <?php
 
-namespace Ddd\Infrastructure\Bus\Command;
+namespace Shared\Infrastructure\Bus\Command;
 
-use Ddd\Domain\Bus\Command\Command;
-use Ddd\Domain\Bus\Command\CommandBus;
-use Ddd\Infrastructure\Bus\CallableFirstParameterExtractor;
+use Shared\Domain\Bus\Command\Command;
+use Shared\Domain\Bus\Command\CommandBus;
+use Shared\Infrastructure\Bus\CallableFirstParameterExtractor;
 use Symfony\Component\Messenger\Exception\HandlerFailedException;
 use Symfony\Component\Messenger\Exception\NoHandlerForMessageException;
 use Symfony\Component\Messenger\Handler\HandlersLocator;

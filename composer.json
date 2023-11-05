@@ -7,12 +7,12 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Ddd\\": "src/"
+            "Shared\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "DDD\\Tests\\": "tests/"
+            "Shared\\Tests\\": "tests/"
         },
         "classmap": [
             "src/"

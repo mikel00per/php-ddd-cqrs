@@ -1,8 +1,8 @@
 <?php
 
-namespace DDD\Tests\Units;
+namespace Shared\Tests\Units;
 
-use DDD\Tests\Utils\TestCase;
+use Shared\Tests\Utils\TestCase;
 
 class ExampleTest extends TestCase
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Ddd\Infrastructure\Bus\Command;
+namespace Shared\Infrastructure\Bus\Command;
 
-use Ddd\Domain\Bus\Command\Command;
+use Shared\Domain\Bus\Command\Command;
 use RuntimeException;
 
 final class CommandNotRegisteredError extends RuntimeException

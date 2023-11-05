@@ -1,8 +1,8 @@
 <?php
 
-namespace Ddd\Infrastructure\Bus\Query;
+namespace Shared\Infrastructure\Bus\Query;
 
-use Ddd\Domain\Bus\Query\Query;
+use Shared\Domain\Bus\Query\Query;
 use RuntimeException;
 
 final class QueryNotRegisteredError extends RuntimeException

@@ -1,8 +1,8 @@
 <?php
 
-namespace Ddd\Infrastructure\Bus;
+namespace Shared\Infrastructure\Bus;
 
-use Ddd\Domain\Bus\Event\DomainEventSubscriber;
+use Shared\Domain\Bus\Event\DomainEventSubscriber;
 use LogicException;
 use ReflectionClass;
 use ReflectionException;

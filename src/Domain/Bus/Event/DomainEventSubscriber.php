@@ -1,6 +1,6 @@
 <?php
 
-namespace Ddd\Domain\Bus\Event;
+namespace Shared\Domain\Bus\Event;
 
 interface DomainEventSubscriber
 {

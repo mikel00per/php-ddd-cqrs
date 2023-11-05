@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Ddd\Infrastructure\Bus\Event;
+namespace Shared\Infrastructure\Bus\Event;
 
-use Ddd\Domain\Bus\Event\DomainEvent;
-use Ddd\Domain\Bus\Event\EventBus;
-use Ddd\Infrastructure\Bus\CallableFirstParameterExtractor;
+use Shared\Domain\Bus\Event\DomainEvent;
+use Shared\Domain\Bus\Event\EventBus;
+use Shared\Infrastructure\Bus\CallableFirstParameterExtractor;
 use Exception;
 use Symfony\Component\Messenger\Exception\NoHandlerForMessageException;
 use Symfony\Component\Messenger\Handler\HandlersLocator;

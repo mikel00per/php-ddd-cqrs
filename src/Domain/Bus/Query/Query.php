@@ -1,6 +1,6 @@
 <?php
 
-namespace Ddd\Domain\Bus\Query;
+namespace Shared\Domain\Bus\Query;
 
 interface Query
 {

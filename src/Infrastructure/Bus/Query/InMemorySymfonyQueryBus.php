@@ -1,11 +1,11 @@
 <?php
 
-namespace Ddd\Infrastructure\Bus\Query;
+namespace Shared\Infrastructure\Bus\Query;
 
-use Ddd\Domain\Bus\Query\Query;
-use Ddd\Domain\Bus\Query\QueryBus;
-use Ddd\Domain\Bus\Query\Response;
-use Ddd\Infrastructure\Bus\CallableFirstParameterExtractor;
+use Shared\Domain\Bus\Query\Query;
+use Shared\Domain\Bus\Query\QueryBus;
+use Shared\Domain\Bus\Query\Response;
+use Shared\Infrastructure\Bus\CallableFirstParameterExtractor;
 use Symfony\Component\Messenger\Exception\NoHandlerForMessageException;
 use Symfony\Component\Messenger\Handler\HandlersLocator;
 use Symfony\Component\Messenger\MessageBus;
