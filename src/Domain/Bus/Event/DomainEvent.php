@@ -4,7 +4,7 @@ namespace Shared\Domain\Bus\Event;
 
 use DateTimeImmutable;
 use DateTimeInterface;
-use ValueObjects\Uuid;
+use Shared\Domain\ValueObjects\Uuid;
 
 abstract class DomainEvent
 {

@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         operating-system: [ubuntu-latest, windows-latest, macOS-latest]
-        php-versions: ['8.0', '8.1']
+        php-versions: ['8.2']
 
     steps:
     - uses: actions/checkout@v3
