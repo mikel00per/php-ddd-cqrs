@@ -2,7 +2,7 @@
 
 namespace Tests\Shared\Units;
 
-use Shared\Tests\Utils\TestCase;
+use Tests\Shared\Utils\TestCase;
 
 class ExampleTest extends TestCase
 {
