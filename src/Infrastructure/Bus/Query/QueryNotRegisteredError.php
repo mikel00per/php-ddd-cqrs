@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Shared\Infrastructure\Bus\Query;
 
-use Shared\Domain\Bus\Query\Query;
 use RuntimeException;
+use Shared\Domain\Bus\Query\Query;
 
 final class QueryNotRegisteredError extends RuntimeException
 {

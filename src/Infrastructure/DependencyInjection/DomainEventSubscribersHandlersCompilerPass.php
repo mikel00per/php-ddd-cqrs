@@ -15,11 +15,7 @@ final class DomainEventSubscribersHandlersCompilerPass implements CompilerPass
      */
     public function process(ContainerBuilder $containerBuilder): void
     {
-        $classes = $containerBuilder->findClassesByResolver(
-            CommandHandler::class,
-            Type::INTERFACE,
-            'src'
-        );
+        $classes = $containerBuilder->findClassesByResolver(CommandHandler::class, Type::INTERFACE, 'src');
 
         $containerBuilder->addDefinitions([CompilerPassesType::DOMAIN_EVENT_SUBSCRIBERS->value => $classes]);
     }

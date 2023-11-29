@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Shared\Infrastructure\Bus;
 
-use Shared\Domain\Bus\Event\DomainEventSubscriber;
 use LogicException;
 use ReflectionClass;
 use ReflectionException;
 use ReflectionMethod;
 use ReflectionNamedType;
+use Shared\Domain\Bus\Event\DomainEventSubscriber;
 
 use function Lambdish\Phunctional\map;
 use function Lambdish\Phunctional\reduce;
