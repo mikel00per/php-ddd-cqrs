@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.4/phpunit.xsd"
+    colors="true"
+    beStrictAboutChangesToGlobalState="true"
+    beStrictAboutOutputDuringTests="true"
+    cacheResultFile="../tmp/cache/phpunit/results.json"
+>
+    <source>
+        <include>
+            <directory>../src</directory>
+        </include>
+        <exclude>
+            <directory>.../vendor</directory>
+            <directory>.../tools</directory>
+            <directory suffix="Interface.php">../src</directory>
+        </exclude>
+    </source>
+
+    <testsuites>
+        <testsuite name="Units">
+            <directory>../tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <coverage>
+        <report>
+            <html outputDirectory="../tmp/phpunit/coverage" lowUpperBound="50" highLowerBound="90"/>
+        </report>
+    </coverage>
+
+    <php>
+        <env name="XDEBUG_MODE" value="coverage"/>
+        <env name="ENVIRONMENT" value="testing"/>
+
+        <env name="MICROSERVICE_NAME" value="test"/>
+        <env name="MICROSERVICE_VERSION" value="v1"/>
+
+        <env name="PATH_CONTAINER_DEFINITIONS" value="config/container.php"/>
+        <env name="PATH_CONTAINER_ADDERS_DEFINITION" value="config/container_adders.php"/>
+        <env name="PATH_AUTO_WIRES" value="config/auto_wires.php"/>
+        <env name="ENABLE_AUTO_WIRES" value="1"/>
+        <env name="ENABLE_ATTRIBUTES" value="1"/>
+        <env name="PATH_COMPILED_CONTAINER" value="tmp/cache/container"/>
+        <env name="PATH_COMPILED_RESOLVER" value="tmp/cache/resolver"/>
+
+        <env name="COMPILE_ROUTES" value="1"/>
+        <env name="PATH_ROUTES_DEFINITION" value="config/routes.php"/>
+        <env name="PATH_ROUTES_CACHE" value="tmp/cache/router/routes.php"/>
+        <env name="PATH_MIDDLEWARES_DEFINITION" value="config/middlewares.php"/>
+
+        <env name="LOGGER_NAME" value="micro_logger"/>
+        <env name="LOGGER_PATH" value="tmp/logs"/>
+        <env name="LOGGER_LEVEL" value="100"/>
+
+        <env name="DISPLAY_ERROR_DETAILS" value="1"/>
+        <env name="LOGS_ERRORS" value="1"/>
+        <env name="LOG_ERROR_DETAILS" value="1"/>
+    </php>
+
+</phpunit>
