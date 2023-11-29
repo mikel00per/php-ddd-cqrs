@@ -17,38 +17,35 @@ help: ##@Miscellaneous Show this help
 	@echo "Written by $(SCRIPT_AUTHOR), version $(SCRIPT_VERSION)"
 	@echo "Please report any bug or error to the author."
 
-start: ##@Library Init library rename strings
-	sh start.sh
-
 run: ##@Container Build and run php container
-	docker-compose -f docker-compose.yml up -d --build
+	docker compose -f docker-compose.yml up -d --build
 
 build: ##@Container Build php container
-	docker-compose -f docker-compose.yml build
+	docker compose -f docker-compose.yml build
 
 stop: ##@Container Stop php container
-	docker-compose -f docker-compose.yml down
+	docker compose -f docker-compose.yml down
 
 destroy: ##@Container Remove all data related with php container
-	docker-compose -f docker-compose.yml down --rmi all
+	docker compose -f docker-compose.yml down --rmi all
 
 shell: ##@Container SHH in container
-	docker-compose -f docker-compose.yml exec php /bin/bash
+	docker compose -f docker-compose.yml exec php /bin/bash
 
 logs: ##@Container Show logs in container
-	docker-compose -f docker-compose.yml logs
+	docker compose -f docker-compose.yml logs
 
 lint: ##@Style Show style errors
-	docker-compose -f docker-compose.yml exec php composer lint
+	docker compose -f docker-compose.yml exec php composer lint
 
 lint-fix: ##@Style Fix style errors
-	docker-compose -f docker-compose.yml exec php composer lint:fix
+	docker compose -f docker-compose.yml exec php composer lint:fix
 
 test: ##@Tests Execute tests
-	docker-compose -f docker-compose.yml exec php composer test
+	docker compose -f docker-compose.yml exec php composer test
 
 test-coverage: ##@Tests Execute tests with coverage
-	docker-compose -f docker-compose.yml exec php composer test:coverage
+	docker compose -f docker-compose.yml exec php composer test:coverage
 
-exec: ##@Code Execute the code index
-	docker-compose -f docker-compose.yml exec php composer exec
+exec: ##@Code Execute composer commands
+	docker compose -f docker-compose.yml exec php composer exec
