@@ -13,7 +13,7 @@ abstract class DomainEvent
     private string $eventId;
     private string $occurredOn;
 
-    public function __construct(private string $aggregateId, string $eventId = null, string $occurredOn = null)
+    public function __construct(private readonly string $aggregateId, string $eventId = null, string $occurredOn = null)
     {
         $this->eventId = $eventId ?: Uuid::random()->value();
         $this->occurredOn = $occurredOn ?: (new DateTimeImmutable())->format(DateTimeInterface::ATOM);
