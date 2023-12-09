@@ -29,6 +29,8 @@ final readonly class RabbitMqDomainEventsConsumer
 
     /**
      * @throws AMQPChannelException|AMQPConnectionException|AMQPEnvelopeException
+     *
+     * @psalm-suppress PossiblyInvalidArgument
      */
     public function consume(callable|DomainEventSubscriber $subscriber, string $queueName): void
     {
