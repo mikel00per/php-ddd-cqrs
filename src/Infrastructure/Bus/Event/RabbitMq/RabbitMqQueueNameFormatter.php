@@ -13,7 +13,7 @@ final class RabbitMqQueueNameFormatter
 {
     public static function format(DomainEventSubscriber $subscriber): string
     {
-        $subscriberClassPaths = explode('\\', str_replace('CodelyTv', 'codelytv', $subscriber::class));
+        $subscriberClassPaths = explode('\\', $subscriber::class);
 
         $queueNameParts = [
             $subscriberClassPaths[0],
@@ -43,11 +43,14 @@ final class RabbitMqQueueNameFormatter
     {
         $subscriberCamelCaseName = (string) last(explode('\\', $subscriber::class));
 
-        return Utils::toSnakeCase($subscriberCamelCaseName);
+        $string = (string) preg_replace('/([^A-Z\s])([A-Z])/', '$1_$2', $subscriberCamelCaseName);
+
+        return ctype_lower($subscriberCamelCaseName) ? $subscriberCamelCaseName : strtolower($string);
     }
 
     private static function toSnakeCase(): callable
     {
-        return static fn (string $text): string => Utils::toSnakeCase($text);
+        return static fn (string $text): string =>
+            ctype_lower($text) ? $text : strtolower((string) preg_replace('/([^A-Z\s])([A-Z])/', '$1_$2', $text));
     }
 }

@@ -11,7 +11,6 @@ use AMQPEnvelopeException;
 use AMQPExchangeException;
 use AMQPQueue;
 use AMQPQueueException;
-use CodelyTv\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqExchangeNameFormatter;
 use Shared\Domain\Bus\Event\DomainEventSubscriber;
 use Shared\Infrastructure\Bus\Event\DomainEventJsonDeserializer;
 use Throwable;
