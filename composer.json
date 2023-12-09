@@ -31,6 +31,8 @@
         "lambdish/phunctional": "^2.1",
         "symfony/messenger": "^6.0"
         "ext-amqp": "*",
+        "doctrine/dbal": "^3",
+        "doctrine/orm": "^2",
     },
     "require-dev": {
         "mikelooper/code-style": "^0.0.2",
