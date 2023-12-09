@@ -30,6 +30,7 @@
         "mikelooper/container-settings": "^0.0.1",
         "lambdish/phunctional": "^2.1",
         "symfony/messenger": "^6.0"
+        "ext-amqp": "*",
     },
     "require-dev": {
         "mikelooper/code-style": "^0.0.2",
