@@ -32,7 +32,7 @@
         "mikelooper/value-objects": "^0",
         "mikelooper/container-settings": "^0",
         "lambdish/phunctional": "^2",
-        "symfony/messenger": "^6"
+        "symfony/messenger": "^7"
     },
     "require-dev": {
         "mikelooper/code-style": "^0",
