@@ -7,6 +7,8 @@ docker-compose.yml export-ignore
 Makefile           export-ignore
 *.neon             export-ignore
 SECURITY.md        export-ignore
+tests              export-ignore
+tools              export-ignore
 
 # Auto detect text files and perform LF normalization
 * text=auto
