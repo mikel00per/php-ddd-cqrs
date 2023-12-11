@@ -35,7 +35,7 @@
         "symfony/messenger": "^6"
     },
     "require-dev": {
-        "mikelooper/code-style": "^0.0.2",
+        "mikelooper/code-style": "^0",
         "phpunit/phpunit": "^10.4",
         "vimeo/psalm": "^5.15"
     },
