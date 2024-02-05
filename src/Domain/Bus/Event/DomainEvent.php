@@ -13,6 +13,9 @@ abstract class DomainEvent
     private string $eventId;
     private string $occurredOn;
 
+    /**
+     * @psalm-suppress RiskyTruthyFalsyComparison
+     */
     public function __construct(private readonly string $aggregateId, string $eventId = null, string $occurredOn = null)
     {
         $this->eventId = $eventId ?: Uuid::random()->value();
