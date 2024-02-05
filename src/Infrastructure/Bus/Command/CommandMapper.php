@@ -7,29 +7,30 @@ namespace Shared\Infrastructure\Bus\Command;
 use Psr\Http\Message\ServerRequestInterface;
 use ReflectionClass;
 use ReflectionException;
-use ReflectionParameter;
-use Shared\Domain\Bus\Query\Query;
+use Shared\Domain\Bus\Command\Command;
 use Shared\Infrastructure\Bus\MissingParameter;
-use function DI\value;
 
 final class CommandMapper
 {
     /**
+     * @param class-string $class
+     *
      * @throws ReflectionException
+     *
+     * @psalm-suppress MoreSpecificReturnType
+     * @psalm-suppress LessSpecificReturnStatement
      */
-    public static function fromRequest(string $class, ServerRequestInterface $serverRequest): Query
+    public static function fromRequest(string $class, ServerRequestInterface $serverRequest): Command
     {
         $reflection = new ReflectionClass($class);
 
         $queryParams = $serverRequest->getQueryParams();
-        $bodyParams = $serverRequest->getParsedBody() ?? [];
+        $bodyParams = (array) $serverRequest->getParsedBody();
 
-        $params = array_merge($queryParams, $bodyParams ?? []);
+        $params = array_merge($queryParams, $bodyParams);
 
         $values = [];
         foreach ((array) $reflection->getConstructor()?->getParameters() as $parameter) {
-            assert($parameter instanceof ReflectionParameter);
-
             if (!isset($params[$parameter->getName()]) && !$parameter->allowsNull()) {
                 throw new MissingParameter($parameter->getName());
             }
@@ -37,6 +38,7 @@ final class CommandMapper
             $values[] = $params[$parameter->getName()] ?? null;
         }
 
+        /**  */
         return new $class(...$values);
     }
 }

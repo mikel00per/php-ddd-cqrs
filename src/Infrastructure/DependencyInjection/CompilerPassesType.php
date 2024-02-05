@@ -9,4 +9,5 @@ enum CompilerPassesType: string
     case COMMAND_HANDLERS = 'command_handlers';
     case QUERY_HANDLERS = 'query_handlers';
     case DOMAIN_EVENT_SUBSCRIBERS = 'domain_event_subscribers';
+    case COMMAND_LINES = 'command_lines';
 }
