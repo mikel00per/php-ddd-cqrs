@@ -6,7 +6,9 @@ namespace Shared\Infrastructure\DependencyInjection;
 
 use ReflectionException;
 use Shared\Domain\Bus\Command\CommandHandler;
+use Shared\Domain\Bus\Event\DomainEventSubscriber;
 use Shared\Infrastructure\Resolver\Type;
+use function Lambdish\Phunctional\map;
 
 final class DomainEventSubscribersHandlersCompilerPass implements CompilerPass
 {
@@ -15,8 +17,11 @@ final class DomainEventSubscribersHandlersCompilerPass implements CompilerPass
      */
     public function process(ContainerBuilder $containerBuilder): void
     {
-        $classes = $containerBuilder->findClassesByResolver(CommandHandler::class, Type::INTERFACE, 'src');
+        $objects = map(
+            fn ($class) => $containerBuilder->findDefinition($class),
+            $containerBuilder->findClassesByResolver(DomainEventSubscriber::class, Type::INTERFACE, 'src')
+        );
 
-        $containerBuilder->addDefinitions([CompilerPassesType::DOMAIN_EVENT_SUBSCRIBERS->value => $classes]);
+        $containerBuilder->addDefinitions([CompilerPassesType::DOMAIN_EVENT_SUBSCRIBERS->value => $objects]);
     }
 }
