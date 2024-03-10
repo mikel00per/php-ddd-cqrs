@@ -25,20 +25,20 @@
         ]
     },
     "require": {
-        "php": "^8.2",
+        "php": "^8",
         "ext-amqp": "*",
         "doctrine/dbal": "^3",
         "doctrine/orm": "^2",
         "lambdish/phunctional": "^2",
         "mikelooper/container-settings": "^0",
         "mikelooper/value-objects": "^0",
-        "psr/http-message": "^1",
+        "psr/http-message": "^2",
         "symfony/messenger": "^7"
     },
     "require-dev": {
         "mikelooper/code-style": "^0",
-        "phpunit/phpunit": "^10.4",
-        "vimeo/psalm": "^5.15"
+        "phpunit/phpunit": "^10",
+        "vimeo/psalm": "^5"
     },
     "scripts": {
         "test": [
