@@ -24,10 +24,7 @@ final class QueryMapper
     {
         $reflection = new ReflectionClass($class);
 
-        $queryParams = $serverRequest->getQueryParams();
-        $bodyParams = (array) $serverRequest->getParsedBody();
-
-        $params = array_merge($queryParams, $bodyParams);
+        $params = $serverRequest->getQueryParams();
 
         $values = [];
         foreach ((array) $reflection->getConstructor()?->getParameters() as $parameter) {

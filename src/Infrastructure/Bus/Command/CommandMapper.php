@@ -26,8 +26,9 @@ final class CommandMapper
 
         $queryParams = $serverRequest->getQueryParams();
         $bodyParams = (array) $serverRequest->getParsedBody();
+        $attributes = $serverRequest->getAttributes();
 
-        $params = array_merge($queryParams, $bodyParams);
+        $params = array_merge($queryParams, $bodyParams, $attributes);
 
         $values = [];
         foreach ((array) $reflection->getConstructor()?->getParameters() as $parameter) {
