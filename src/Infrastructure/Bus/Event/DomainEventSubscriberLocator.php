@@ -14,11 +14,8 @@ use function Lambdish\Phunctional\search;
 
 final readonly class DomainEventSubscriberLocator
 {
-    private array $mapping;
-
-    public function __construct(Traversable $mapping)
+    public function __construct(private array $mapping)
     {
-        $this->mapping = iterator_to_array($mapping);
     }
 
     public function allSubscribedTo(string $eventClass): array
